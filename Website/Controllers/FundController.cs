@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Common;
 using Microsoft.AspNetCore.Mvc;
+using Website.Models;
 
 namespace Website.Controllers
 {
@@ -13,13 +14,7 @@ namespace Website.Controllers
             var response = new ServiceClient<List<Fund>>().GetData($"{Constants.FundAPIUrl}/v1/funds");
 
             return response.Data;
-        }       
+        }      
 
-        public class Fund
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-        }
     }
 }

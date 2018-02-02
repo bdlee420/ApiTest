@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Common;
 using Microsoft.AspNetCore.Mvc;
+using Website.Models;
 
 namespace Website.Controllers
 {
@@ -10,16 +11,21 @@ namespace Website.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Asset> GetAssetData()
         {
-            var response = new ServiceClient<List<Asset>>().GetData($"{Constants.AssetAPIUrl}/v1/assets");
+            var assetData = new ServiceClient<List<Asset>>().GetData($"{Constants.AssetAPIUrl}/v1/assets");
 
-            return response.Data;
+            var fundData = new ServiceClient<List<Fund>>().GetData($"{Constants.FundAPIUrl}/v1/funds");
+
+            return assetData.Data;
         }
 
-        public class Asset
+        [HttpGet("[action]")]
+        public IEnumerable<Asset> SearchAssetData()
         {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
+            var search = new Search();
+
+            var assetData = new ServiceClient<List<Asset>>().SearchData($"{Constants.AssetAPIUrl}/v1/assets/search", search);
+
+            return assetData.Data;
         }
     }
 }

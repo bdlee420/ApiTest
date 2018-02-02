@@ -16,6 +16,12 @@ export class AssetData extends React.Component<RouteComponentProps<{}>, CounterS
             .then(data => {
                 this.setState({ assets: data, loading: false });
             });
+
+        fetch('api/Asset/SearchAssetData')
+            .then(response => response.json() as Promise<Asset[]>)
+            .then(data => {
+                this.setState({ assets: data, loading: false });
+            });
     }
 
     public render() {
