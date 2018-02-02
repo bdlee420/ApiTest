@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundService", "FundService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetService", "AssetService\AssetService.csproj", "{45014AC0-C268-41E0-9618-4D8B5F3E610A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45014AC0-C268-41E0-9618-4D8B5F3E610A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45014AC0-C268-41E0-9618-4D8B5F3E610A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45014AC0-C268-41E0-9618-4D8B5F3E610A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45014AC0-C268-41E0-9618-4D8B5F3E610A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

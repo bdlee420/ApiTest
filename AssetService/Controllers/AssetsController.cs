@@ -90,7 +90,7 @@ namespace ApiTest.Controllers
             if (search.PropertiesCategory == PropertiesCategory.Default)
             {
                 assets = data.Select(d => new Asset() { Id = d.Id, Name = d.Name }).ToList();
-            }           
+            }
 
             var res = new Result<List<Asset>>()
             {
@@ -107,7 +107,7 @@ namespace ApiTest.Controllers
         public Result<List<int>> PostGetId([FromBody]Search search)
         {
             var assets = new List<Asset>();
-            var data = GetData(search).Select(d => d.Id).ToList(); 
+            var data = GetData(search).Select(d => d.Id).ToList();
 
             var res = new Result<List<int>>()
             {
@@ -169,12 +169,12 @@ namespace ApiTest.Controllers
             return assets;
         }
     }
-   
+
     public class Asset
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
-    
+
 }
