@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ApiTest.Controllers
 {
     [Route("v1/[controller]")]
-    public class AssetsController : BaseController
+    public class AssetsController : Controller
     {
         // GET All Assets
         [HttpGet]

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
 
 namespace ApiTest.Controllers
 {
-    public class BaseController : Controller
+    public class BaseController 
     {
     }
     public class Result<T>

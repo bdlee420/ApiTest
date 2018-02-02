@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiTest", "ApiTest\ApiTest.csproj", "{746C025C-F01C-4FED-87A7-5125EDFB9DDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundService", "FundService\FundService.csproj", "{A2A533E6-732D-484C-B43E-A30514D05DC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{746C025C-F01C-4FED-87A7-5125EDFB9DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{746C025C-F01C-4FED-87A7-5125EDFB9DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{746C025C-F01C-4FED-87A7-5125EDFB9DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{746C025C-F01C-4FED-87A7-5125EDFB9DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2A533E6-732D-484C-B43E-A30514D05DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A533E6-732D-484C-B43E-A30514D05DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A533E6-732D-484C-B43E-A30514D05DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A533E6-732D-484C-B43E-A30514D05DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51ACE89-8E41-4EB9-BA66-7B67D3A2BC0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
