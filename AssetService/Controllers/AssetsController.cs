@@ -22,7 +22,7 @@ namespace ApiTest.Controllers
                 new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("User-Agent", "Test");
 
-            var fundData = client.GetStringAsync("http://localhost:50527/v1/funds").Result;
+            var fundData = client.GetStringAsync($"{Constants.FundAPIUrl}/v1/funds").Result;
 
             var res = new Result<List<Asset>>()
             {

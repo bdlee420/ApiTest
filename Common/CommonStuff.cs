@@ -2,8 +2,10 @@
 
 namespace ApiTest.Controllers
 {
-    public class BaseController 
+    public class Constants
     {
+        public const string FundAPIUrl = "http://localhost:61205";
+        public const string AssetAPIUrl = "http://localhost:61301";
     }
     public class Result<T>
     {
