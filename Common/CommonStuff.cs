@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ApiTest.Controllers
+namespace Common
 {
     public class Constants
     {

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
+using Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTest.Controllers
@@ -16,13 +15,7 @@ namespace ApiTest.Controllers
         {
             var assetData = GetData();
 
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Add("User-Agent", "Test");
-
-            var fundData = client.GetStringAsync($"{Constants.FundAPIUrl}/v1/funds").Result;
+            var data = new ServiceClient<List<Fund>>().GetData($"{Constants.FundAPIUrl}/v1/funds");
 
             var res = new Result<List<Asset>>()
             {
@@ -171,6 +164,13 @@ namespace ApiTest.Controllers
     }
 
     public class Asset
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+    }
+
+    public class Fund
     {
         public int Id { get; set; }
         public string Name { get; set; }
