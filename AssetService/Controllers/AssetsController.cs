@@ -11,6 +11,7 @@ namespace ApiTest.Controllers
     {
         // GET All Assets
         [HttpGet]
+        //URL: http://localhost:61301/v1/assets
         public Result<List<Asset>> Get()
         {
             var assetData = GetData();
@@ -28,6 +29,7 @@ namespace ApiTest.Controllers
         }
 
         // GET All Assets
+        // URL: http://localhost:61301/v1/assets/ids
         [HttpGet("ids")]
         public Result<List<int>> GetIds()
         {
@@ -42,6 +44,7 @@ namespace ApiTest.Controllers
         }
 
         // GET Asset by Id
+        // URL: http://localhost:61301/v1/assets/1
         [HttpGet("{id}", Order = 0)]
         public Result<Asset> Get(int id)
         {
@@ -56,6 +59,7 @@ namespace ApiTest.Controllers
         }
 
         // SEARCH assets, returns List
+        // NOTES: Probably will not use long URLs like this.  POST is fine are easier to make changes to
         [HttpGet("page/{pageId}/pagesize/{pageSize}/searchstring/{searchString}/sortcolumn/{sortColumn}/isdescending/{isDescending}", Order = 1)]
         public Result<List<Asset>> Get(int pageId, int pageSize, string searchString, string sortColumn, bool isDescending)
         {
@@ -73,6 +77,7 @@ namespace ApiTest.Controllers
         }
 
         // SEARCH assets, returns Asset List
+        // URL: http://localhost:61301/v1/assets/search
         [HttpPost("search")]
         public Result<List<Asset>> Post([FromBody]Search search)
         {
@@ -96,6 +101,7 @@ namespace ApiTest.Controllers
         }
 
         // SEARCH assets, returns Int List
+        // URL: http://localhost:61301/v1/assets/search/id
         [HttpPost("search/id")]
         public Result<List<int>> PostGetId([FromBody]Search search)
         {
@@ -113,6 +119,7 @@ namespace ApiTest.Controllers
         }
 
         // SEARCH assets, returns Name List
+        // URL: http://localhost:61301/v1/assets/search/name
         [HttpPost("search/name")]
         public Result<List<string>> PostGetName([FromBody]Search search)
         {
@@ -130,6 +137,7 @@ namespace ApiTest.Controllers
         }
 
         // SEARCH assets, returns List
+        // URL: http://localhost:61301/v1/assets/search/count
         [HttpPost("search/count")]
         public Result<int> PostGetCount([FromBody]Search search)
         {
@@ -160,7 +168,7 @@ namespace ApiTest.Controllers
             var assets = GetData();
             IEnumerable<Asset> res = null;
 
-            if (!String.IsNullOrEmpty(search.Filter.SearchString))
+            if (search.Filter != null && !String.IsNullOrEmpty(search.Filter.SearchString))
                 res = assets.Where(a => a.Name.Contains(search.Filter.SearchString, StringComparison.OrdinalIgnoreCase));
 
             return res?.ToList() ?? assets;
