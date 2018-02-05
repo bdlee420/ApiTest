@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Common
 {
-    public class ServiceClient<T>
+    public static class ServiceClient<T>
     {
         private readonly static HttpClient _client = new HttpClient();
         private const string _mediaType_JSON = "application/json";
@@ -16,7 +16,7 @@ namespace Common
             return _client;
         }
 
-        public Result<T> GetData(string url)
+        public static Result<T> GetData(string url)
         {
             var client = GetHttpClient();
 
@@ -27,7 +27,7 @@ namespace Common
             return data;
         }
 
-        public Result<T> SearchData(string url, Search search)
+        public static Result<T> SearchData(string url, Search search)
         {
             var client = GetHttpClient();
 

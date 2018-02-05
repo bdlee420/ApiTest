@@ -11,7 +11,7 @@ namespace Website.Controllers
         [HttpGet("[action]")]
         public IEnumerable<Fund> GetFundData()
         {
-            var response = new ServiceClient<List<Fund>>().GetData($"{Constants.FundAPIUrl}/v1/funds");
+            var response = ServiceClient<List<Fund>>.GetData($"{Constants.FundAPIUrl}/v1/funds");
 
             return response.Data;
         }      

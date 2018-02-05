@@ -15,7 +15,7 @@ namespace ApiTest.Controllers
         {
             var assetData = GetData();
 
-            var data = new ServiceClient<List<Fund>>().GetData($"{Constants.FundAPIUrl}/v1/funds");
+            var data = ServiceClient<List<Fund>>.GetData($"{Constants.FundAPIUrl}/v1/funds");
 
             var res = new Result<List<Asset>>()
             {
@@ -158,8 +158,12 @@ namespace ApiTest.Controllers
         private List<Asset> GetData(Search search)
         {
             var assets = GetData();
-            //DO SOME FILTERING
-            return assets;
+            IEnumerable<Asset> res = null;
+
+            if (!String.IsNullOrEmpty(search.Filter.SearchString))
+                res = assets.Where(a => a.Name.Contains(search.Filter.SearchString, StringComparison.OrdinalIgnoreCase));
+
+            return res?.ToList() ?? assets;
         }
     }
 
